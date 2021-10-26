@@ -1,0 +1,2 @@
+# odoocourse
+GVP odoo course
