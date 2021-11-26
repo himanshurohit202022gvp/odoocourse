@@ -194,4 +194,4 @@ class EstateProperty(models.Model):
                 raise ValidationError("Garden cannot be bigger than living area")        
 
 
-   
+
