@@ -194,4 +194,15 @@
         </field>
     </record>
 
+    <record id="estate_calendar" model="ir.ui.view">
+                <field name="name">estate.property</field>   
+                <field name="model">estate.property</field>   
+                <field name="arch" type="xml">
+                    <calendar string="Service Request" date_start="date_request" date_stop="return_date" event_open_popup="true" mode="month" color="person_name" quick_add="False">       
+                        <field name="person_name"/>           
+                        <field name="technician_name"/>       
+                    </calendar>
+                </field>
+    </record>
+    
 </odoo>

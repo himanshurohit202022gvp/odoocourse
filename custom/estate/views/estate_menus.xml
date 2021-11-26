@@ -28,10 +28,17 @@
 	        <field name="view_mode">tree,form</field>
         </record>
 
-        
+        <record id="estate_calendar" model="ir.actions.act_window">
+		    <field name="name">View Calendar</field>   
+		    <field name="res_model">estate.property</field>  
+			<field name="view_mode">calendar,tree,form,kanban,pivot,graph</field>  
+			<field name="help" type="html">     
+			<p class="oe_view_nocontent_create"> Click to Create a New Record.</p>  
+			</field>
+		</record>
 
 
-		<menuitem id="menu_real_estate_root" name="My Real Estate">
+		<menuitem id="menu_real_estate_root" name="Real Estate">
 		    <menuitem id="menu_real_estate_advertisments" name="Advertisements">
 		        <menuitem id="menu_real_estate_action" action="menu_real_estate_properties_action"/>
 		        <menuitem id="menu_real_estate_offer_action" action="real_estate_properties_offer_action"/> 
@@ -43,6 +50,9 @@
 
         <menuitem id="menu_real_estate_property_type" name="Settings" parent="menu_real_estate_root"/>
     	<menuitem id="menu_real_estate_property_type_action" parent="menu_real_estate_property_type" action="estate_property_type_action"/>
-
+		
+		
+        
+		
 
 </odoo>
