@@ -6,7 +6,7 @@
 	    <record id="menu_real_estate_properties_action" model="ir.actions.act_window">
 		    <field name="name">Properties</field>
 		    <field name="res_model">estate.property</field>
-		    <field name="view_mode">tree,form</field>
+		    <field name="view_mode">kanban,calendar,tree,form,gantt,graph</field>
 		    <field name="context">{'search_default_state':'new'}</field>
 		</record>
 
@@ -25,18 +25,14 @@
         <record id="real_estate_properties_offer_action" model="ir.actions.act_window">
 	        <field name="name">Offers</field>
 	        <field name="res_model">estate.property.offer</field>
-	        <field name="view_mode">tree,form</field>
+	        <field name="view_mode">kanban,tree,form</field>
         </record>
 
-        <record id="estate_calendar" model="ir.actions.act_window">
-		    <field name="name">View Calendar</field>   
-		    <field name="res_model">estate.property</field>  
-			<field name="view_mode">calendar,tree,form,kanban,pivot,graph</field>  
-			<field name="help" type="html">     
-			<p class="oe_view_nocontent_create"> Click to Create a New Record.</p>  
-			</field>
-		</record>
-
+       <record id="report_action" model="ir.actions.act_window">
+	        <field name="name">Print Reports</field>
+	        <field name="res_model">estate.property.type</field>
+	        <field name="view_mode">tree,form</field>
+        </record>
 
 		<menuitem id="menu_real_estate_root" name="Real Estate">
 		    <menuitem id="menu_real_estate_advertisments" name="Advertisements">
@@ -51,7 +47,8 @@
         <menuitem id="menu_real_estate_property_type" name="Settings" parent="menu_real_estate_root"/>
     	<menuitem id="menu_real_estate_property_type_action" parent="menu_real_estate_property_type" action="estate_property_type_action"/>
 		
-		
+		<menuitem id="menu_real_estate_report" name="Reports" parent="menu_real_estate_root"/>
+        <menuitem id="menu_real_estate_report_action" parent="menu_real_estate_report" action="report_action"/>
         
 		
 

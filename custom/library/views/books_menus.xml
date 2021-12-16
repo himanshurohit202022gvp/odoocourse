@@ -4,13 +4,13 @@
     <record id="books_action" model="ir.actions.act_window">
         <field name="name">Library books</field>
         <field name="res_model">books</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
      <record id="real_estate_author_action" model="ir.actions.act_window">
         <field name="name">Book Author</field>
         <field name="res_model">author</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
       <record id="real_estate_category_action" model="ir.actions.act_window">
