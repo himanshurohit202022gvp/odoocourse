@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="property_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                <div class="page">
+                    <h1><span t-field="o.name"/></h1>
+                    <t t-foreach="o.property_tag_ids" t-as="tag">
+                        <span class="badge badge-success" t-filed="tag.name"/>
+                    </t>
+                    <div>
+                        <table cass="table">
+                            <tr>
+                                <th>Offer Made by</th>
+                                <th>Price</th>
+                            </tr>
+                            <t t-foreach="o.property_offer_ids" t-as="offer">
+                                <tr>
+                                    <td><span t-field="offer.partner_id.name"/></td>
+                                    <td><span t-field="offer.price"/></td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -19,7 +19,7 @@ class Test(models.Model):
         return res
 
 
-class EstatePropertOffer(models.Model):
+class EstatePropertyOffer(models.Model):
     _name = 'estate.property.offer'
     _description = 'Estate Property Offer'
 
@@ -118,13 +118,15 @@ class EstateProperty(models.Model):
         ])
 
     #active=fields.Boolean() 
+    
 
+    owner_id=fields.Many2many('res.partner')
     image = fields.Image()
     property_type_id = fields.Many2one('estate.property.type')
     salesman_id = fields.Many2one('res.users')
     buyer_id = fields.Many2one('res.partner')
     test_id = fields.Many2one('test')
-    property_tag_ids = fields.Many2many('estate.property.tag')
+    property_tag_ids = fields.Many2many('estate.property.tag','partner_id')
     property_offer_ids = fields.One2many('estate.property.offer', 'property_id')
     total_area = fields.Integer(compute="_compute_area", inverse="_inverse_area")
     best_price = fields.Float(compute="_compute_best_price")

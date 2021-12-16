@@ -32,6 +32,24 @@
         </field>
     </record>
 
+    <record id="estate_property_books_form" model="ir.ui.view">
+        <field name="name">Books Name</field>
+        <field name="model">books</field>
+        <field name="arch" type="xml">
+             <Kanban>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="price"/>
+                        <field name="date"/>
+                    </group>
+                  
+                </sheet>
+             </Kanban>
+        </field>
+    </record>
+
+
      <record id="estate_property_books_form" model="ir.ui.view">
         <field name="name">Books Name</field>
         <field name="model">books</field>
