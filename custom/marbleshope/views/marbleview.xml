@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+    <record id="estate_property_books_tree" model="ir.ui.view">
+        <field name="name">Vender Detail</field>
+        <field name="model">marbledata</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="product"/>
+                <field name="qnt"/>
+                 <field name="nom"/>
+                 <field name="unitprice"/>
+                 <field name="totalprice"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="marbleshope.list">
+      <field name="name">marbleshope list</field>
+      <field name="model">marbleshope.marbleshope</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="marbleshope.action_window">
+      <field name="name">marbleshope window</field>
+      <field name="res_model">marbleshope.marbleshope</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="marbleshope.action_server">
+      <field name="name">marbleshope server</field>
+      <field name="model_id" ref="model_marbleshope_marbleshope"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="marbleshope" id="marbleshope.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="marbleshope.menu_1" parent="marbleshope.menu_root"/>
+    <menuitem name="Menu 2" id="marbleshope.menu_2" parent="marbleshope.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="marbleshope.menu_1_list" parent="marbleshope.menu_1"
+              action="marbleshope.action_window"/>
+    <menuitem name="Server to list" id="marbleshope" parent="marbleshope.menu_2"
+              action="marbleshope.action_server"/>
+-->
+  </data>
+</odoo>
