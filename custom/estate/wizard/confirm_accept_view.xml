@@ -14,8 +14,7 @@
 <!--                    <field name="charge"/>-->
                 </group>
                 <footer>
-                    <button name="confirm" cla
-ss="btn-primary" type="object" string="Yes"/>
+                    <button name="confirm" class="btn-primary" type="object" string="Yes"/>
                     <button string="No" special="cancel"/>
                 </footer>
             </form>

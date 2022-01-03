@@ -1,0 +1,49 @@
+<odoo>
+    <template id="index">
+         <t t-call="website.layout">
+            <!-- <title>My Estate Page</title> -->
+            <!-- <h1> Helli World</h1> -->
+                <t t-set="title">My Estste</t>
+                <div class="oe_structure">    
+                    <div class="container">
+                        <table class="table">
+                            <tr>
+                                <th>Reference No</th>
+                                <th>Name</th>
+                                <th> Expected Price</th>
+                            </tr>
+                            <t t-foreach="properties" t-as="record">
+                                <tr>
+                                    <td><t t-esc="record.ref_seq"/></td>
+                                    <td><t t-esc="record.name"/></td>
+                                    <td><t t-esc="record.expected_price"/></td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+            </t>
+                    
+        <!-- <table>
+            <th>
+            <t t-foreach="properties" t-as="n">
+                <li><t t-esc="n"/></li>
+            </t>
+            </th>
+            <td>
+            <t t-foreach="city" t-as="c">
+                <li><t t-esc="c"/></li>
+            </t>
+            </td>
+        </table> -->
+
+        <!-- <ul>
+            
+                <t t-foreach="properties" t-as="c">
+                    <li><t t-esc="c.name"/></li>
+                </t>
+            
+        </ul> -->
+
+    </template>
+</odoo>

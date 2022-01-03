@@ -3,7 +3,7 @@
     <!-- Add view for wizard -->
     <record id="view_print_report" model="ir.ui.view">
         <field name="name">Print Report</field>
-        <!-- <field name="model">print.report</field> -->
+        <field name="model">print.report</field>
         <field name="arch" type="xml">
             <form>
                 <group>

@@ -2,8 +2,8 @@
 <odoo>
     <!-- Add view for wizard -->
     <record id="view_create_sold_invoice" model="ir.ui.view">
-        <!-- <field name="name">Create Sold Invoice</field> -->
-        <!-- <field name="model">create.sold.invoice</field> -->
+        <field name="name">Create Sold Invoice</field>
+        <field name="model">create.sold.invoice</field>
         <field name="arch" type="xml">
             <form>
                 <group>
@@ -27,3 +27,4 @@
         <field name="view_mode">form</field>
     </record>
 </odoo>
+

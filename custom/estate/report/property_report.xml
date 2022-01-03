@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="report_print" model="ir.actions.report">
-        <field name="name">Property Name</field>
+    <record id="my_paper_format" model="report.paperformat">
+        <field name="name">My Paper</field>
+        <field name="format">A5</field>
+        <!-- Paper Size Height Width-->
+        <!-- Orientation -->
+        <!-- margins - top bottom left rigth -->
+    </record>
+
+    <record id="report_print_property" model="ir.actions.report">
+        <field name="name">Property Details</field>
         <field name="model">estate.property</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">estate.property_detail</field>
         <field name="report_file">estate.property_detail</field>
-        <field name="print_report_name">'Property Detail -%s' %(object.name)</field>
+        <field name="print_report_name">'Property Detail - %s' % (object.name)</field>
         <field name="binding_model_id" ref="model_estate_property"/>
-        <field name="binding_type">report</field>
+        <!-- <field name="paperformat_id" ref="estate.my_paper_format"/> -->
+        <!-- <field name="binding_type">report</field> -->
     </record>
 </odoo>

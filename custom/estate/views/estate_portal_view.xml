@@ -1,0 +1,95 @@
+<odoo>
+    <template id="portal_my_home_estate_property" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Properties</t>
+                <t t-set="url" t-value="'/my/properties'"/>
+                <t t-set="placeholder_count" t-value="'total_properties'"/>
+            </t>
+        </xpath>
+    </template>
+
+
+<!-- For Breadcrubs -->
+    <template id="portal_my_home_estate_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass ('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'my_properties'" class="breadcrumb-item">
+                <a>Property</a>
+            </li>
+        </xpath>
+    </template>
+
+    <!-- List view for properties -->
+    <template id="portal_my_properties">
+        <t t-call="portal.portal_layout">
+            <t t-if="properties" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Ref</th>
+                        <th>Name</th>
+                        <th class="text-right">Expected Price</th>
+                    </tr>
+                </thead>
+                <t t-foreach="properties" t-as="property">
+                    <tr>
+                        <td><a t-att-href="property.get_portal_url()"><t t-esc="property.ref_seq"/></a></td>
+                        <td><t t-esc="property.ref_seq"/></td>
+                        <td><t t-esc="property.name"/></td>
+                        <td class="text-right"><t t-esc="property.expected_price"/></td>
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <!-- <template id="property_portal_view" name="Property View" inherit_id="poratal.portal_sidebar">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <div class="row_mt16_o_portal_sale_sidebar">
+                <t t-call="portal.portal_record_sidebar">
+                    <t t-set="title">
+                        <h2><b t-field="property.expected_price"/></h2>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </template> -->
+    <template id="property_portal_view" name="Property View" inherit_id="portal.portal_sidebar">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <div class="row mt16 o_portal_sale_sidebar">
+                <t t-call="portal.portal_record_sidebar">
+                    <t t-set="title">
+                        <h2><b t-field="property.expected_price"/></h2>
+                    </t>
+                </t>
+                <div class="card pb-5">
+                    <!-- Intro -->
+                    <div id="introduction" class="card-header bg-white">
+                        <h2 class="my-0">
+                            <t t-esc="property.ref_seq"/>
+                            <em t-esc="property.name"/>
+                        </h2>
+                    </div>
+
+                    <div class="card-body">
+                        <!-- Informations -->
+                        <div id="informations">
+                            <div class="row" id="so_date">
+                                <div class="mb-3 col-6">
+                                    <strong>Expected Price : </strong> <span t-field="property.expected_price"/>
+                                </div>
+                                <div class="mb-3 col-6" >
+                                    <strong>Highest Offer :</strong> <span t-field="property.best_price"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    <!-- <template>
+        <t t-call="portal.portal_layout">
+            <span>This is portal view</span>
+        </t>
+    </template> -->
+</odoo>
