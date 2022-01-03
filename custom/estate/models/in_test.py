@@ -31,5 +31,5 @@ class M3(models.Model):
 	_name = 'm3'
 	_inherits = {'my.test':'test_id'}
 
-	test_id = fields.Many2one('')
+	# test_id = fields.Many2one('')
 
